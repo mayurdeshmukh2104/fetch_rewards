@@ -89,10 +89,10 @@ psql -h localhost -p 5432 -U postgres
 _Note: The app version in the received data is checked to determine if it is in the appropriate integer format. If not, it is converted to an appropriate integer value before being loaded into the database._
 
 ## Questions Part 1 (Implementation Questions):
-* How will you read messages from the queue?
+* #### How will you read messages from the queue?
 This script fetches data from AWS SQS Queue via custom localstack image, performs data transformations on the data, and finally loads the transformed data into a PostgreSQL database. The script first imports required libraries such as json, subprocess, localstack_client.session from boto3, hashlib, pandas, psycopg2, datetime, and configparser. It then reads the credentials for the AWS client and SQS queue name from the config.properties file and creates an AWS SQS client using the boto3 library. It then creates an SQS queue URL and uses the awslocal command to receive messages from the SQS queue. The received data is stored in a list.
 
-* ### What type of data structures should be used?
+* #### What type of data structures should be used?
 The data structures used are python dictionaries since it is compatible to parse json data. The script then also uses pandas to normalize the received data and creates new columns called ip_masked and device_id_masked.
 * #### How will you mask the PII data so that duplicate values can be identified?
 To mask the PII data, the hashlib library is used. It hashes the values in the ip and device_id columns and stores them in the respective masked columns. It also finds duplicates in the ip and device_id columns and updates the corresponding masked columns.
