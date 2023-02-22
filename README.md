@@ -17,6 +17,7 @@ AWS CLI
 ## Installation
 
 Install Python 3.x from https://www.python.org/downloads/
+
 Install Pandas, Psycopg2, configparser, localstack-client, and AWS CLI using pip:
 ```
 pip install pandas psycopg2 configparser localstack-client awscli
@@ -26,8 +27,11 @@ pip install pandas psycopg2 configparser localstack-client awscli
 
 Modify the path in the code to point to the config.properties file.
 Modify the values in the config.properties file to reflect the configuration for the SQS queue and database.
+
 Run the script using the following command:
+```
 python ETL.py
+```
 
 ## Code
 
