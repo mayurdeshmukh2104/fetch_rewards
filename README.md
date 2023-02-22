@@ -71,7 +71,7 @@ Connect to Postgres database using command:
 psql -h localhost -p 5432 -U postgres
 ```
 
-##Once connected to database, you can run sql queries to interact with the data inside the databases;
+## Once connected to database, you can run sql queries to interact with the data inside the databases;
 
 
 ## Code
